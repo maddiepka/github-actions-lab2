@@ -3,13 +3,12 @@ name: Installing Python
 on: [push]
 
 jobs:
-  matrix-system:
-    strategy:
-      matrix:
-        py-version: [3.10, 3.11, 3.12]
-        os: [ubuntu-latest, macos-14, windows-latest]
-
   build:
+    strategy:
+    matrix:
+      py-version: [3.10, 3.11, 3.12]
+      os: [ubuntu-latest, macos-14, windows-latest]
+
     runs-on: ${{ matrix.os }}
     steps:
     - name: Set up Python
